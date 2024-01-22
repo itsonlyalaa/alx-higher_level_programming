@@ -31,3 +31,7 @@ Test_6
     >>> say_my_name(("al", "fd"), "Darious")
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
+Test_7
+    >>> say_my_name("Rosey", "depp")
+    My name is Rosey depp
