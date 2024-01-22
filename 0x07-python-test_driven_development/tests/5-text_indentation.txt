@@ -1,0 +1,82 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+Test_0
+    >>> text_indentation("Hello how are you? fine and you? I'm awesome.")
+    Hello how are you?
+    <BLANKLINE>
+    fine and you?
+    <BLANKLINE>
+    I'm awesome.
+    <BLANKLINE>
+
+Test_1 
+    >>> text_indentation("I'm learning TDD")
+    I'm learning TDD
+
+Test_2
+    >>> text_indentation("Hey.?: hello. hola")
+    Hey.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    hello.
+    <BLANKLINE>
+    hola
+
+Test_3
+    >>> text_indentation(6.2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_4
+    >>> text_indentation(["I'm", "Your", "Sister"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_5
+    >>> text_indentation(("I'm", "a", "Tuple"))
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_6
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test_7
+    >>> text_indentation(".:?Marhaba")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    Marhaba
+
+Test_8
+    >>> text_indentation("Hola.alaa dear:how are you?")
+    Hola.
+    <BLANKLINE>
+    alaa dear:
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
+
+Test_9
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test_10
+    >>> text = "?:."
+    >>> text_indentation(text)
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
