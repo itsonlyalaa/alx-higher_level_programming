@@ -1,0 +1,206 @@
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Usage:
+
+Test_0
+    >>> lazy_matrix_mul([[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]], [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])
+    [[3, 3, 3, 3], [3, 3, 3, 3], [3, 3, 3, 3], [3, 3, 3, 3]]
+    >>> lazy_lazy_matrix_mul([[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]], [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]])
+    [[3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0]]
+    >>> lazy_matrix_mul([[-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0]], [[-1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0]])
+    [[3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0]]
+    >>> lazy_matrix_mul([[2, 3], [3, 4], [1, 2]], [[1, 1, 1, 1], [1, 1, 1, 0]])
+    [[5, 5, 5, 2], [7, 7, 7, 3], [3, 3, 3, 1]]
+
+Test_1
+    >>> first_matrix = "string"
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a is not a list
+
+Test_2
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = "string"
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b is not a list
+
+Test_3
+    >>> first_matrix = "string"
+    >>> second_matrix = "string"
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a is not a list
+
+Test_4
+    >>> first_matrix = [3, 2, 4, 4]
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a is not a list of lists
+
+Test_5
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = [2, 3, 4, 5]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b is not a list of lists
+
+Test_6
+    >>> first_matrix = [2, 3, 3, 4]
+    >>> second_matrix = [2, 3, 3, 4]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a is not a list of lists
+
+Test_7
+    >>> first_matrix = []
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_8
+    >>> first_matrix = [[]]
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_9
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = []
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b is empty
+
+Test_10
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = [[]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b is empty
+
+Test_11
+    >>> first_matrix = []
+    >>> second_matrix = []
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_12
+    >>> first_matrix = []
+    >>> second_matrix = [[]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_13
+    >>> first_matrix = [[]]
+    >>> second_matrix = []
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_14
+    >>> first_matrix = [[]]
+    >>> second_matrix = [[]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a is empty
+
+Test_15
+    >>> first_matrix = [[1, 2, "h"], [2, 3, 4]]
+    >>> second_matrix = [[2, 2], [3, 1], [4, 2]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a should contain only numbers
+
+Test_16
+    >>> first_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> second_matrix = [[2, "2"], [3, 1], [4, 2]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_b should contain only numbers
+
+Test_17
+    >>> first_matrix = [[1, 2, "3"], [2, 3, 4]]
+    >>> second_matrix = [[2, "2"], [3, 1], [4, 2]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a should contain only numbers
+
+Test_18
+    >>> first_matrix = [[1, 2, 3], [2, 3]]
+    >>> second_matrix = [[1, 2], [2, 3], [2, 2]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: rows must be of the same size
+
+Test_19
+    >>> first_matrix = [[1, 2], [2, 3], [2, 2]]
+    >>> second_matrix = [[2, 3, 4, 5], [2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: rows must be of the same size
+
+Test_20
+    >>> first_matrix = [[1, 2], [2, 3, 3], [2, 2]]
+    >>> second_matrix = [[2, 3, 4, 5], [2, 3]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: rows must be of the same size
+
+Test_21 column number of first matrix is different to the row number of second matrix
+-------
+    >>> first_matrix = [[1, 2], [2, 3], [3, 2]]
+    >>> second_matrix = [[2, 3], [3,2], [2, 2]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ValueError: Multiplication can't be done
+
+Test_0
+    >>> first_matrix = None
+    >>> second_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a is not a list
+
+Test_1
+    >>> first_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> second_matrix = None
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_b is not a list
+
+Test_2
+    >>> first_matrix = None
+    >>> second_matrix = None
+    >>> lazy_matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a is not a list
+
+Test_3
+    >>> print(lazy_matrix_mul([[1, 2, 3], [1, 2, 3]]))
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+Test_4
+    >>> print(lazy_matrix_mul())
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
