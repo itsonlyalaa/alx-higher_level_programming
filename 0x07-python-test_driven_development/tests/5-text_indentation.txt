@@ -82,11 +82,11 @@ Test_10
     <BLANKLINE>
 
 test_11
-    >>> text_indentation("Anne. raider? How are you: Anne")
+    >>> text_indentation("Anne. raider? How are you:    Anne")
     Anne.
     <BLANKLINE>
     raider?
     <BLANKLINE>
     How are you:
     <BLANKLINE>
-    Anne
+       Anne
