@@ -90,3 +90,13 @@ test_11
     How are you:
     <BLANKLINE>
        Anne
+
+test_12
+>>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+     John
